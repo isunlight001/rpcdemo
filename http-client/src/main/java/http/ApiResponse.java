@@ -4,10 +4,10 @@ package http;
 import java.io.Serializable;
 
 /**
- * 通用的返回结果类
- *
- * @author liyebing created on 15/9/6.
- * @version $Id$
+ * 通用的返回结果类,在项目中推荐使用这种写法，统一返回，避免很多项目的返回类型不一样，造成以后维护的难度
+ * @author sunlight001
+ * 2018年12月14日
+ * @param <T>
  */
 public class ApiResponse<T> implements Serializable {
 

@@ -2,11 +2,10 @@ package zk;
 
 import org.I0Itec.zkclient.IZkDataListener;
 import org.I0Itec.zkclient.ZkClient;
-
 /**
- *
- * @author liyebing created on 17/4/18.
- * @version $Id$
+ * 
+ * @author sunlight001
+ * 2018年12月14日
  */
 public class ZKClientDemo {
 

@@ -18,8 +18,8 @@ public class ClientMain {
         FramedClientConnector connector = new FramedClientConnector(new InetSocketAddress("localhost",8899));
 
         User user = new User();
-        user.setName("liyebing");
-        user.setEmail("test@163.com");
+        user.setName("sunlight001");
+        user.setEmail("sunlight001@163.com");
 
         HelloService helloService = clientManager.createClient(connector,HelloService.class).get();
         String hi= helloService.sayHello(user);
