@@ -49,12 +49,12 @@
                     <pluginArtifact>io.grpc:protoc-gen-grpc-java:1.0.0:exe:${os.detected.classifier}</pluginArtifact>
                 </configuration>
                 <executions>
-                    <execution>
+                   <!--  <execution>
                         <goals>
                             <goal>compile</goal>
                             <goal>compile-custom</goal>
                         </goals>
-                    </execution>
+                    </execution> -->
                 </executions>
             </plugin>
         </plugins>

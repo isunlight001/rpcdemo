@@ -11,7 +11,7 @@
     <packaging>war</packaging>
 
     <properties>
-        <axis2.version>1.7.4</axis2.version>
+        <axis2.version>1.7.8</axis2.version>
         <spring.version>4.0.9.RELEASE</spring.version>
     </properties>
 
@@ -84,11 +84,11 @@
             <artifactId>axis2-transport-tcp</artifactId>
             <version>${axis2.version}</version>
         </dependency>
-        <dependency>
+        <!-- <dependency>
             <groupId>org.apache.axis2</groupId>
             <artifactId>axis2-webapp</artifactId>
             <version>${axis2.version}</version>
-        </dependency>
+        </dependency> -->
         <dependency>
             <groupId>org.apache.axis2</groupId>
             <artifactId>axis2-xmlbeans</artifactId>

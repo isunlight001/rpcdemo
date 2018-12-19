@@ -162,11 +162,11 @@
                 <groupId>org.apache.avro</groupId>
                 <artifactId>avro-maven-plugin</artifactId>
                 <executions>
-                    <execution>
+                   <!--  <execution>
                         <goals>
                             <goal>idl-protocol</goal>
                         </goals>
-                    </execution>
+                    </execution> -->
                 </executions>
             </plugin>
         </plugins>

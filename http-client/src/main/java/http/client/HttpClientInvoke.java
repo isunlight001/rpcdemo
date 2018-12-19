@@ -32,7 +32,7 @@ import java.util.List;
 import java.util.concurrent.*;
 
 /**
- * @author liyebing created on 16/12/4.
+ * @author sunlight001 created on 16/12/4.
  * @version $Id$
  */
 public class HttpClientInvoke {
@@ -40,14 +40,14 @@ public class HttpClientInvoke {
     @Test
     public void test1() throws Exception {
         //构建HttpGet对象
-        String uriGet = "http://localhost:8080/hello/sayHello.json?userName=liyebing";
+        String uriGet = "http://localhost:8080/hello/sayHello.json?userName=sunlight001";
         HttpGet httpGet = new HttpGet(uriGet);
 
         //构建HttpPost对象
         String uriPost = "http://localhost:8080/hello/sayHello.json";
         HttpPost httpPost = new HttpPost(uriPost);
         List<NameValuePair> nvps = new ArrayList<NameValuePair>();
-        nvps.add(new BasicNameValuePair("userName", "liyebing"));
+        nvps.add(new BasicNameValuePair("userName", "sunlight001"));
         httpPost.setEntity(new UrlEncodedFormEntity(nvps));
 
     }
@@ -62,7 +62,7 @@ public class HttpClientInvoke {
                 .setHost("localhost")
                 .setPort(8080)
                 .setPath("/hello/sayHello.json")
-                .setParameter("userName", "liyebing")
+                .setParameter("userName", "sunlight001")
                 .build();
 
         //构建httpGet
@@ -85,7 +85,7 @@ public class HttpClientInvoke {
     @Test
     public void testFluentApi_1() throws IOException {
 
-        String uri = "http://localhost:8080/hello/sayHello.json?userName=liyebing";
+        String uri = "http://localhost:8080/hello/sayHello.json?userName=sunlight001";
         String returnResult = Request.Get(uri)
                 .execute().returnContent().asString(Charset.forName("utf-8"));
 
@@ -97,7 +97,7 @@ public class HttpClientInvoke {
     @Test
     public void testFluentApi_2() throws IOException {
 
-        String uri = "http://localhost:8080/hello/sayHello.json?userName=liyebing";
+        String uri = "http://localhost:8080/hello/sayHello.json?userName=sunlight001";
         ApiResponse response = Request.Get(uri)
                 .execute().handleResponse(new ResponseHandler<ApiResponse>() {
                     public ApiResponse handleResponse(HttpResponse response) throws ClientProtocolException, IOException {
@@ -113,7 +113,7 @@ public class HttpClientInvoke {
         HttpContext context = new BasicHttpContext();
         HttpClientContext clientContext = HttpClientContext.adapt(context);
 
-        String userName = "liyebing";
+        String userName = "sunlight001";
         URI uri = new URIBuilder().setScheme("http").setHost("localhost")
                 .setPort(8080).setPath("/hello/sayHello.json").setParameter("userName", userName).build();
 
@@ -152,7 +152,7 @@ public class HttpClientInvoke {
         //创建请求的URL列表
         List<String> urisToGet = new ArrayList<String>();
         for (int i = 0; i < 100; i++) {
-            urisToGet.add("http://localhost:8080/hello/sayHello.json?userName=liyebing_" + i);
+            urisToGet.add("http://localhost:8080/hello/sayHello.json?userName=sunlight001_" + i);
         }
 
 
@@ -179,7 +179,7 @@ public class HttpClientInvoke {
         ExecutorService executorService = Executors.newFixedThreadPool(5);
         FutureRequestExecutionService futureRequestExecutionService = new FutureRequestExecutionService(httpClient, executorService);
 
-        String url = "http://localhost:8080/hello/sayHello.json?userName=liyebing";
+        String url = "http://localhost:8080/hello/sayHello.json?userName=sunlight001";
         HttpRequestFutureTask<ApiResponse> task = futureRequestExecutionService.execute(new HttpGet(url), HttpClientContext.create(), new ResponseHandler<ApiResponse>() {
             public ApiResponse handleResponse(HttpResponse response) throws ClientProtocolException, IOException {
                 String result = EntityUtils.toString(response.getEntity(), Charset.forName("utf-8"));
@@ -198,7 +198,7 @@ public class HttpClientInvoke {
         CloseableHttpAsyncClient httpclient = HttpAsyncClients.createDefault();
         try {
             httpclient.start();
-            String url = "http://localhost:8080/hello/sayHello.json?userName=liyebing";
+            String url = "http://localhost:8080/hello/sayHello.json?userName=sunlight001";
             HttpGet request = new HttpGet(url);
             Future<HttpResponse> future = httpclient.execute(request, null);
             HttpResponse response = future.get();
